@@ -67,18 +67,18 @@ Align a pipe-separated table:
 
 The plugin uses Lua's built-in `string.find` as the pattern engine. Lua special characters must be escaped with `%`.
 
-| Goal                    | Pattern   | Notes                        |
-|-------------------------|-----------|------------------------------|
-| Align on `=`            | `=`       |                              |
-| Align on `:=`           | `:=`      |                              |
-| Align on `:`            | `:`       |                              |
-| Align on `->`           | `%->`     | `-` is a special char        |
-| Align on `\|` (pipe)    | `%|`      | `|` is a special char        |
-| Align on `,`            | `,`       |                              |
-| Align on `.`            | `%.`      | `.` matches any char raw     |
-| Align on whitespace     | `%s+`     | one or more spaces/tabs      |
-| Align on `=>`           | `=>`      |                              |
-| Align on `::`           | `::`      |                              |
+| Goal                 | Pattern | Notes                    |
+| -------------------- | ------- | ------------------------ | --- | ------------------- |
+| Align on `=`         | `=`     |                          |
+| Align on `:=`        | `:=`    |                          |
+| Align on `:`         | `:`     |                          |
+| Align on `->`        | `%->`   | `-` is a special char    |
+| Align on `\|` (pipe) | `%      | `                        | `   | ` is a special char |
+| Align on `,`         | `,`     |                          |
+| Align on `.`         | `%.`    | `.` matches any char raw |
+| Align on whitespace  | `%s+`   | one or more spaces/tabs  |
+| Align on `=>`        | `=>`    |                          |
+| Align on `::`        | `::`    |                          |
 
 **Lua special characters that need `%` escaping:** `. + - * ? [ ] ^ $ ( ) %`
 
@@ -88,14 +88,14 @@ The plugin uses Lua's built-in `string.find` as the pattern engine. Lua special 
 
 All options are passed as a table to `require("align").align(opts)`:
 
-| Option       | Type            | Default  | Description                                                         |
-|--------------|-----------------|----------|---------------------------------------------------------------------|
-| `pattern`    | `string`        | required | A Lua pattern string used as the alignment delimiter                |
-| `padding`    | `integer`       | `1`      | Number of spaces to insert between pre-match text and the delimiter |
-| `justify`    | `"left"/"right"`| `"left"` | `"left"`: trailing spaces; `"right"`: leading spaces               |
-| `max_width`  | `integer\|nil`  | `nil`    | Skip lines where pre-match width exceeds this value                 |
-| `ignore_case`| `boolean`       | `false`  | **Not supported** — emits a warning; has no effect                  |
-| `range`      | `{int, int}\|nil`| `nil`  | `{start, end}` 0-indexed, exclusive end; `nil` = entire buffer     |
+| Option        | Type              | Default  | Description                                                         |
+| ------------- | ----------------- | -------- | ------------------------------------------------------------------- |
+| `pattern`     | `string`          | required | A Lua pattern string used as the alignment delimiter                |
+| `padding`     | `integer`         | `1`      | Number of spaces to insert between pre-match text and the delimiter |
+| `justify`     | `"left"/"right"`  | `"left"` | `"left"`: trailing spaces; `"right"`: leading spaces                |
+| `max_width`   | `integer\|nil`    | `nil`    | Skip lines where pre-match width exceeds this value                 |
+| `ignore_case` | `boolean`         | `false`  | **Not supported** — emits a warning; has no effect                  |
+| `range`       | `{int, int}\|nil` | `nil`    | `{start, end}` 0-indexed, exclusive end; `nil` = entire buffer      |
 
 ### `padding`
 
@@ -293,4 +293,4 @@ Each module has a single clear responsibility. `core.lua` and `parser.lua` have 
 
 ## License
 
-MIT
+GNU GENERAL PUBLIC LICENSE
