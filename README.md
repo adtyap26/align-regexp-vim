@@ -25,7 +25,7 @@ Align any block of text on a delimiter pattern — `=`, `:=`, `|`, `->`, `,`, an
 
 ```lua
 {
-  "yourusername/align-regexp-vim",
+  "adtyap26/align-regexp-vim",
   config = function()
     -- No setup() required. The :Align command is registered automatically.
     -- Add keymaps here if desired (see Keymap Examples below).
